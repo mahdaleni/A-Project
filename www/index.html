@@ -11,9 +11,30 @@
     <link rel="stylesheet" href="css/waves.min.css" />
     <link rel="stylesheet" href="css/animate.css" />
     <link rel="stylesheet" href="css/nativedroid2.css" />
+    
+    <link href="csss/prettify.css" type="text/css" rel="stylesheet" />
+    <link href="csss/app.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="jss/prettify.js"></script>
+    <script type="text/javascript" src="jss/jquery.min.js"></script>
+    <script type="text/javascript" src="jss/jquery.fittext.js"></script>
+    <script type="text/javascript" src="jss/example.js"></script>
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    
+    <script>
+    document.addElement("deviceready", function() {
+  // Intiailize the map instance.
+  var map = plugin.google.maps.Map.getMap(mapDiv);
+  
+  // Wait until the map is ready.
+  map.on(plugin.google.maps.event.MAP_READY, function() {
+    // Google Map is displayed.
+  });
+});
+</script>
+    
 </head>
 
 <body>
