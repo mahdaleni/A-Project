@@ -1,9 +1,17 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
-  <head>
-    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
-    <meta charset="utf-8" />
-    <title>Google Maps Plugin for Cordova</title>
+
+<head>
+    <title>
+        nativeDroid II - jQueryMobile Template
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+    <link rel="stylesheet" href="css/jquery.mobile.min.css" />
+    <link rel="stylesheet" href="css/waves.min.css" />
+    <link rel="stylesheet" href="css/animate.css" />
+    <link rel="stylesheet" href="css/nativedroid2.css" />
+  
     <link href="css/prettify.css" type="text/css" rel="stylesheet" />
     <link href="css/app.css" type="text/css" rel="stylesheet" />
     <script type="text/javascript" src="cordova.js"></script>
@@ -11,23 +19,15 @@
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/jquery.fittext.js"></script>
     <script type="text/javascript" src="js/example.js"></script>
-    
-     <link rel="stylesheet" href="css/font-awesome.min.css" />
-    <link rel="stylesheet" href="css/jquery.mobile.min.css" />
-    <link rel="stylesheet" href="css/waves.min.css" />
-    <link rel="stylesheet" href="css/animate.css" />
-    <link rel="stylesheet" href="css/nativedroid2.css" />
+  
+  
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-   
-  </head>
-  <body>
-    <div id="map_canvas" ></div>
-  </body>
-  
-  
-   <div data-role="page">
+</head>
+
+<body>
+    <div data-role="page">
         <nd2-include data-src="panel.left.html">
         </nd2-include>
         <div data-role="panel" id="bottomsheet" data-animate="false" data-position='bottom'
@@ -46,6 +46,7 @@
             <p>
                 This is a demo app made with nativeDroid Theme, that implements the material design
             </p>
+           <div id="map_canvas" ></div>
         </div>
     </div>
     <script type="text/javascript" src="cordova.js">
@@ -62,4 +63,6 @@
     </script>
     <script src="scripts/nd2settings.js">
     </script>
+</body>
+
 </html>
