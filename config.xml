@@ -30,6 +30,12 @@
     <preference name="CordovaWebViewEngine" value="CDVWKWebViewEngine" />
     <preference name="xwalkZOrderOnTop" value="true" />
     <preference name="BackgroundColor" value="0" />
+      <plugin name="cordova-plugin-googlemaps" spec="2.1.1">
+        <variable name="API_KEY_FOR_ANDROID" value="AIzaSyAFBHukw3makDc_UuvtAVuk-4MsN7C8z1M" />
+        <variable name="API_KEY_FOR_IOS" value="(your api key)" />
+        <variable name="LOCATION_WHEN_IN_USE_DESCRIPTION" value="Show your location on the map" />
+        <variable name="LOCATION_ALWAYS_USAGE_DESCRIPTION" value="Trace your location on the map" />
+</plugin> 
     <engine name="android" spec="^6.2.3" />
     <engine name="ios" spec="~4.4.0" />
     <plugin name="cordova-plugin-console" spec="^1.0.7" />
