@@ -32,28 +32,61 @@
         
         
         
-        <script type="text/javascript">
-            
-            
-         var map;
-    document.addEventListener("deviceready", function() {
-      var div = document.getElementById("map_canvas");
-
-      // Initialize the map view
-      map = plugin.google.maps.Map.getMap(div);
-
-      // Wait until the map is ready status.
-      map.addEventListener(plugin.google.maps.event.MAP_READY, onMapReady);
-    }, false);
-
-    function onMapReady() {
-      var button = document.getElementById("button");
-      button.addEventListener("click", onBtnClicked, false);
+    <script type="text/javascript">
+        var div = document.getElementById("map_canvas");
+var map = plugin.google.maps.Map.getMap(div, {
+  'mapType': plugin.google.maps.MapTypeId.ROADMAP,
+  'controls': {
+    'compass': true,
+    'myLocationButton': false,
+    'indoorPicker': true,
+    'zoom': true
+  },
+  'gestures': {
+    'scroll': true,
+    'tilt': true,
+    'rotate': true,
+    'zoom': true
+  },
+  'styles': [
+    {
+      featureType: "all",
+      stylers: [
+        { saturation: -80 }
+      ]
+    },{
+      featureType: "road.arterial",
+      elementType: "geometry",
+      stylers: [
+        { hue: "#00ffee" },
+        { saturation: 50 }
+      ]
+    },{
+      featureType: "poi.business",
+      elementType: "labels",
+      stylers: [
+        { visibility: "off" }
+      ]
     }
-
-    function onBtnClicked() {
-      map.showDialog();
-    }
+  ],
+  'camera' : {
+    target: {
+      lat: 37.422375,
+      lng: -122.084207
+    },
+    zoom: 10
+  },
+  'preferences': {
+    'zoom': {
+      'minZoom': 10,
+      'maxZoom': 18
+    },
+    'building': false
+  }
+});
+map.one(plugin.google.maps.event.MAP_READY, function() {
+  console.log("--> map_canvas : ready.");
+});
             
             
             
