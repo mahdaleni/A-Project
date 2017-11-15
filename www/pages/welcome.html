@@ -1,0 +1,64 @@
+<style type="text/css">
+  .container {
+    background-color: #FFFFFF;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  div#image {
+    position: relative;
+    width: 100%;
+    height: 40%;
+    background-image: url("images/welcome_img.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto 56%;
+  }
+  p {
+    word-wrap: keep-all;
+    padding: auto 2em;
+  }
+  @media (orientation:portrait) {
+    div#title {
+      width: 100%;
+      height: 20%;
+      word-wrap: keep-all;
+    }
+  }
+  @media (orientation:landscape) {
+    div#title {
+      width: 100%;
+      height: 10%;
+      word-break: keep-all;
+    }
+  }
+</style>
+<div class="container">
+  <div id="image"></div>
+  <div id="title">Welcome to<br>Smoke Live Marker<br>version 1.2.XX7</div>
+  <p>Dipersembahkan oleh Tim Digital Teknik Mesin UIR<br><a href="http://cordova.apache.org/" target="_blank"></a><br><a href="https://github.com/wf9a5m75/phonegap-googlemaps-plugin" target="_blank"> </a>Develop by Ir. Arif</p>
+  <button>Let's start simulator!</button>
+</div>
+
+<script type="text/javascript">
+jQuery("#title").fitText(1.75);
+jQuery("p").fitText(2.5);
+$(document).one("pageLoad", function() {
+
+  $("button").one("click", function() {
+    $('#image').fadeOut(function() {
+      // https://github.com/yoik/cordova-yoik-screenorientation
+      // screen.unlockOrientation();
+      loadPage("step1");
+    });
+  });
+  
+  // https://github.com/yoik/cordova-yoik-screenorientation
+  // screen.lockOrientation('portrait');
+});
+</script>
