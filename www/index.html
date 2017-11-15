@@ -33,117 +33,26 @@
         
         
         <script type="text/javascript">
-        document.addElement("deviceready", function() {
-  // Intiailize the map instance.
-  var map = plugin.google.maps.Map.getMap(mapDiv);
-  
-  // Wait until the map is ready.
-  map.on(plugin.google.maps.event.MAP_READY, function() {
-    // Google Map is displayed.
-  });
-})
-        
-        map.getMyLocation(onLocationSuccess, onLocationError);
+    var map;
+    document.addEventListener("deviceready", function() {
+      var div = document.getElementById("map_canvas");
 
-function onLocationSuccess( result ) {
-    alert(JSON.stringify( result, null, 4 ));
-}
-function onLocationError( error_obj ) {
-    alert("Can not detect your location. \n" +
-          "In order to demo, use dummy location." );
-}
-        
-         var option = {
-      enableHighAccuracy: true  // force GPS
-    };
-    map.getMyLocation(option, function(result) {
-      alert(JSON.stringify( result, null, 4 ));
-      next(result);
-    }, function(error_obj) {
-      alert("Can not detect your location. \n" +
-          "In order to demo, use dummy location." );
-      next({
-        latLng: {
-          lat: 37.422488,
-          lng: -122.08422
-        }
-      });
-    });
-  });
-  
-});
-        
-        function onLocationSuccess(result) {
-  map.animationCamera({
-    //tilt: 10,
-    //bearing: 230,
-    target: result.latLng,
-    zoom: 17
-  }, onAnimationFinished);
-}
-function onAnimationFinished() {
-  alert("Animation finished!");
-}
-        
-        map.addMarker({
-  'position': result.latLng,
-  'title': "Hello Google Maps!\n" + 
-           "PhoneGap-GoogleMaps-Plugin is easy!",
+      // Initialize the map view
+      map = plugin.google.maps.Map.getMap(div);
 
-  'snippet': 'Tap here, then next',
-  'styles' : {
-    'text-align': 'center',
-    'font-style': 'italic',
-    'font-weight': 'bold',
-    'color': 'red'
-  },
-  animation: plugin.google.maps.Animation.DROP
-}, onMarkerAdded);
+      // Wait until the map is ready status.
+      map.addEventListener(plugin.google.maps.event.MAP_READY, onMapReady);
+    }, false);
 
-function onMarkerAdded(marker) {
-  marker.showInfoWindow();
-  marker.addEventListener(plugin.google.maps.event.INFO_CLICK, onInfoWndClicked);
-}
-function onInfoWndClicked(marker) {
-  marker.hideInfoWindow();
-}
-        
-        map.addCircle({
-  'center': result.latLng,
-  'radius': 100, //100m
-  'strokeColor' : '#AA00FF',
-  'strokeWidth': 5,
-  'fillColor' : '#880000'
-}, onCircleAdded);
-function onCircleAdded(circle) {
-  setTimeout(function() {
-    circle.setFillColor("lightgreen");
-  }, 3000);
-}
-        
-          var onCircleAdded = function(circle) {
-      setTimeout(function() {
-        circle.setFillColor("lightgreen");
-        $("#nextBtn").show();
-        map.refreshLayout();
-      }, 3000);
-    };
-    
-    map.addCircle({
-      'center': result.latLng,
-      'radius': 100,
-      'strokeColor' : '#AA00FF',
-      'strokeWidth': 5,
-      'fillColor' : '#880000'
-    }, onCircleAdded);
-  });
-  
-  $("#nextBtn").one("click", function() {
-    $(this).remove();
-    loadPage("step6", result);
-  });
-});
-</script>
+    function onMapReady() {
+      var button = document.getElementById("button");
+      button.addEventListener("click", onBtnClicked, false);
+    }
+
+    function onBtnClicked() {
+      map.showDialog();
+    }
+    </script>
         
         
         
