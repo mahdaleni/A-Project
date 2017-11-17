@@ -12,34 +12,7 @@
     <link rel="stylesheet" href="css/animate.css" />
     <link rel="stylesheet" href="css/nativedroid2.css" />
 	
-	
-	
-	
-    <script type="text/javascript" src="js/geolocation-marker.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-        <script src="https://cdn.firebase.com/js/client/2.2.3/firebase.js"></script>
-        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false&v=3.19"></script>
-        <script type="text/javascript" src="js/maps.js"></script>
-        <script src="https://chadkillingsworth.github.io/geolocation-marker/geolocation-marker.js"></script>
-	
-	<style type="text/css">
-      html { height: 100% }
-      body { height: 100%; margin: 0; padding: 0 }
-    #map { height: 100% }
-    #divControls {  position: absolute; 
-          left: 10px; 
-          bottom: 20px; 
-          z-index: 100; 
-          border: 0px solid #a1a1a1;
-          *border-radius: 25px;
-          margin: 10px;
-          padding: 5px;
-          background-color: Green;}
-    </style>
-    
-    
-	    
-    
+
     
     <style>
         body {
@@ -50,47 +23,6 @@
 
 <body>
     <div data-role="page">
-        
-        
-        
-     
-	    
-	    
-	<script>
-
-      function geolocation() {
-       
-        GeoMarker = new GeolocationMarker();
-        GeoMarker.setCircleOptions({fillColor: '#808080'});
-
-        google.maps.event.addListenerOnce(GeoMarker, 'position_changed', function() {
-          map.setCenter(this.getPosition());
-          map.fitBounds(this.getBounds());
-        });
-
-        google.maps.event.addListener(GeoMarker, 'geolocation_error', function(e) {
-          alert('There was an error obtaining your position. Message: ' + e.message);
-        });
-
-        GeoMarker.setMap(map);
-      }
-
-      google.maps.event.addDomListener(window, 'load', initialize);
-
-      if(!navigator.geolocation) {
-        alert('Your browser does not support geolocation');
-      }    
-
-</script>
-	    
-	    
-	  
-	    
-	   
-        
-        
-        
-        
         
         
         
@@ -107,29 +39,7 @@
         </div>
         
         
-        
-        
-       
-        
-      <div id="divControls">
-    <input type="radio" name="geomType" id="radPoint" value="Point" checked>Point</input><br>
-    <input type="radio" name="drawType" id="radDraw" value="Draw" checked>Draw</input><br>
-    <hr>
-    <input type="button" id="btnEraseAll" value="GPS" onclick="geolocation();"></input>
-    <hr>
-    <input type="button" id="btnEraseAll" value="REFRESH" onclick="myFunction();"></input>
-    <hr>
-    <input type="button" id="btnEraseAll" value="DELETE" onclick="eraseAll();"></input>
-    
-
-  </div>
-
-
-  <div id="map"/>
-        
-        
-        
-        
+         
         
         
     </div>
