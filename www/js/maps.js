@@ -15,6 +15,34 @@
         key: snapshot.key()
       });
 
+        
+      
+        
+//geolocation
+      function geolocation() {
+       
+        GeoMarker = new GeolocationMarker();
+        GeoMarker.setCircleOptions({fillColor: '#808080'});
+
+        google.maps.event.addListenerOnce(GeoMarker, 'position_changed', function() {
+          map.setCenter(this.getPosition());
+          map.fitBounds(this.getBounds());
+        });
+
+        google.maps.event.addListener(GeoMarker, 'geolocation_error', function(e) {
+          alert('There was an error obtaining your position. Message: ' + e.message);
+        });
+
+        GeoMarker.setMap(map);
+      }
+
+      google.maps.event.addDomListener(window, 'load', initialize);
+
+      if(!navigator.geolocation) {
+        alert('Your browser does not support geolocation');
+      }    
+
+
 
 
 
@@ -29,10 +57,6 @@ google.maps.event.addListener(marker,'click',function() {
 
 
 
-
-
-    
-       
 
       markers.push(marker);
       console.log(typeof marker);
@@ -113,7 +137,10 @@ function placeMarker(map, location) {
       });
       
     }
-    
+
+
+
+//delete   
     function eraseAll() {
       PointsRef.remove();
     }
@@ -121,8 +148,7 @@ function placeMarker(map, location) {
     google.maps.event.addDomListener(window, 'load', initialize);
 
 
-//reload
-
+//refresh
 function myFunction() {
     location.reload();
 }
