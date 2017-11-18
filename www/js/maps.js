@@ -115,15 +115,7 @@ function placeMarker(map, location) {
 
 
 
-
-
- 
-
-
-
-
-
-//delete   
+  
     function eraseAll() {
       PointsRef.remove();
     }
@@ -131,7 +123,8 @@ function placeMarker(map, location) {
     google.maps.event.addDomListener(window, 'load', initialize);
 
 
-//refresh
+
+
 function myFunction() {
     location.reload();
 }
