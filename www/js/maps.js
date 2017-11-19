@@ -17,11 +17,6 @@
 
            
 
-
-
-
-
-
 //Pan Back to Marker
 google.maps.event.addListener(marker,'click',function() {
   var pos = map.getZoom();
@@ -115,7 +110,7 @@ function placeMarker(map, location) {
 
 
 
-
+//geofire
 function geolocation() {
        
         GeoMarker = new GeolocationMarker();
@@ -138,7 +133,7 @@ function geolocation() {
 
 
 
-  
+//delete  
     function eraseAll() {
       PointsRef.remove();
     }
@@ -147,7 +142,7 @@ function geolocation() {
 
 
 
-
+//refresh
 function myFunction() {
     location.reload();
 }
