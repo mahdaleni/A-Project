@@ -5,16 +5,7 @@
     
      <style>
     #map { height: 500px }
-    #divControls {  position: absolute; 
-          left: 10px; 
-          bottom: 20px; 
-          z-index: 100; 
-          border: 0px solid #a1a1a1;
-          *border-radius: 25px;
-          margin: 10px;
-          padding: 5px;
-          background-color: Green;}
-    </style>
+    #form
     
     <title>
         nativeDroid II - jQueryMobile Template
@@ -74,16 +65,19 @@
             
             
         
-    <div id="divControls">
-    
-    <input type="radio" name="geomType" id="radPoint" value="Point" checked>Point</input><br>
-    <input type="radio" name="drawType" id="radDraw" value="Draw" checked>Draw</input><br>
-    <hr>
-    <input type="button" id="btnEraseAll" value="GPS" onclick="geolocation();"></input>
-    <hr>
-    <input type="button" id="btnEraseAll" value="REFRESH" onclick="myFunction();"></input>
-    <hr>
-    <input type="button" id="btnEraseAll" value="DELETE" onclick="eraseAll();"></input>
+
+	
+<form>
+    <fieldset data-role="controlgroup" data-type="horizontal">
+        <legend>Horizontal:</legend>
+        <input name="radio-choice-h-2" id="radio-choice-h-2a" value="myFunction()" checked="checked" type="radio">
+        <label for="radio-choice-h-2a">One</label>
+        <input name="radio-choice-h-2" id="radio-choice-h-2b" value="off" type="radio">
+        <label for="radio-choice-h-2b">Two</label>
+        <input name="radio-choice-h-2" id="radio-choice-h-2c" value="other" type="radio">
+        <label for="radio-choice-h-2c">Three</label>
+    </fieldset>
+</form>
    
     </div>
     <div id="map"/>
