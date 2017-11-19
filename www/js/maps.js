@@ -6,6 +6,7 @@
     var MapRef = new Firebase('https://mapsomething.firebaseio.com/mapData');
     var CenterRef = new Firebase('https://mapsomething.firebaseio.com/mapData/centerLatLng');
     var ZoomRef = new Firebase('https://mapsomething.firebaseio.com/mapData/mapZoom');
+
     
     PointsRef.on('child_added', function(snapshot) {
       var location = new google.maps.LatLng(snapshot.val().pointLatLng.Lat, snapshot.val().pointLatLng.Lng);
@@ -40,6 +41,7 @@ google.maps.event.addListener(marker,'click',function() {
         }
       }
     });
+
     
     CenterRef.on('value', function(snapshot) {
       var center = new google.maps.LatLng(snapshot.val().Lat, snapshot.val().Lng);
@@ -47,6 +49,7 @@ google.maps.event.addListener(marker,'click',function() {
         map.setCenter(center);
       //}
     });
+
     
     ZoomRef.on('value', function(snapshot) {
       var zoom = snapshot.val();
@@ -55,6 +58,7 @@ google.maps.event.addListener(marker,'click',function() {
         console.log(zoom);
       }
     });
+
         
     function initialize() {
       var mapOptions = {
@@ -130,19 +134,16 @@ function geolocation() {
       }  
 
 
-
-
-
 //delete  
     function eraseAll() {
       PointsRef.remove();
     }
     
-    google.maps.event.addDomListener(window, 'load', initialize);
-
-
-
+   
 //refresh
 function myFunction() {
     location.reload();
 }
+
+
+google.maps.event.addDomListener(window, 'load', initialize);
