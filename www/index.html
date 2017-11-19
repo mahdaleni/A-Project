@@ -3,6 +3,19 @@
 
 <head>
     
+     <style>
+    #map { height: 600px }
+    #divControls {  position: relative; 
+          left: 10px; 
+          bottom: 20px; 
+          z-index: 100; 
+          border: 0px solid #a1a1a1;
+          *border-radius: 25px;
+          margin: 10px;
+          padding: 5px;
+          background-color: Green;}
+    </style>
+    
     <title>
         nativeDroid II - jQueryMobile Template
     </title>
@@ -30,18 +43,7 @@
     
     
     
-     <style>
-    #map { height: 500px }
-    #divControls {  position: absolute; 
-          left: 10px; 
-          bottom: 20px; 
-          z-index: 100;
-          border: 0px solid #a1a1a1;
-          *border-radius: 25px;
-          margin: 10px;
-          padding: 5px;
-          background-color: Green;}
-    </style>
+    
     
     
 </head>
@@ -97,12 +99,17 @@
             
             
             
-    <div id="divControls">
+       <div id="divControls">
+    <input type="radio" name="geomType" id="radPoint" value="Point" checked>Point</input><br>
+    <input type="radio" name="drawType" id="radDraw" value="Draw" checked>Draw</input><br>
+    <hr>
     <input type="button" id="btnEraseAll" value="GPS" onclick="geolocation();"></input>
     <hr>
     <input type="button" id="btnEraseAll" value="REFRESH" onclick="myFunction();"></input>
     <hr>
     <input type="button" id="btnEraseAll" value="DELETE" onclick="eraseAll();"></input>
+    
+
     </div>
     <div id="map"/>
    
