@@ -146,7 +146,7 @@ function myFunction() {
 }
 
 
-$('#myLink').click(function(){ MyFunction(); return false; });
+$('#myLink').click(function(){ myFunction(); return false; });
 
 
 google.maps.event.addDomListener(window, 'load', initialize);
