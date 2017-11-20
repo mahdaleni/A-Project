@@ -138,6 +138,17 @@ function geolocation() {
     function eraseAll() {
       PointsRef.remove();
     }
+
+
+$(document).ready(function() {
+    $("#solTitle a").click(function() {
+        function myFunction() {
+    location.reload();
+}
+        //Do stuff when clicked
+    });
+});
+
     
    
 //refresh
@@ -145,8 +156,6 @@ function myFunction() {
     location.reload();
 }
 
-
-$('#myLink').click(function(){ myFunction(); return false; });
 
 
 google.maps.event.addDomListener(window, 'load', initialize);
