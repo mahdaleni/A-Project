@@ -20,17 +20,6 @@
         
         
        
-        
-
-           
-
-//Pan Back to Marker
-google.maps.event.addListener(marker,'click',function() {
-  var pos = map.getZoom();
-  map.setZoom(19);
-  map.setCenter(marker.getPosition());
-  window.setTimeout(function() {map.setZoom(pos);},19000);
-});
 
 
 
@@ -145,22 +134,24 @@ function geolocation() {
       PointsRef.remove();
     }
 
-
-$(document).ready(function() {
-    $("#solTitle a").click(function() {
-        function myFunction() {
-    location.reload();
-}
-        //Do stuff when clicked
-    });
-});
-
     
    
 //refresh
 function myFunction() {
     location.reload();
 }
+
+
+
+//Pan Back to Marker
+google.maps.event.addListener(marker,'click',function() {
+  var pos = map.getZoom();
+  map.setZoom(19);
+  map.setCenter(marker.getPosition());
+  window.setTimeout(function() {map.setZoom(pos);},19000);
+});
+
+
 
 
 
