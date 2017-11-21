@@ -13,6 +13,9 @@
     <link rel="stylesheet" href="css/nativedroid2.css" />
     <script type="text/javascript" src="cordova.js"></script>
     
+    <script type="text/javascript" src="js/starbucks_hawaii_stores.json"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    
     <script type="text/javascript" src="js/geolocation-marker.js"></script>
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
      <script src="https://cdn.firebase.com/js/client/2.2.3/firebase.js"></script>
@@ -62,8 +65,11 @@
         
         
         
-        
-         <div style="width:100%;height:600px" id="map"></div>
+         <div id="map_canvas">
+        <span id="label" style="background-color:white;padding:.5em;font-size:125%;position:fixed;right:0;top:0;"></span>
+        <button id="removeClusterBtn" style="position:fixed;bottom:0;right:0;padding:.5em;font-size:125%;">markerCluster.remove()</button>
+</div>
+      
         
         
         
