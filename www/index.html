@@ -6,7 +6,7 @@
     
      <style>
     #map { height: 500px }
-    #form {  position: absolute } 
+    #forms {  position: relative } 
       
     </style>
   
@@ -74,32 +74,18 @@
             
             
         
-    <form>
+   <div id="forms">
   <input type="button" value="Click me" onclick="myFunction()">
   <input type="button" value="Click me" onclick="eraseAll()">
   <input type="button" value="Click me" onclick="geolocation()">  
-   </form>
+   </div>
     <div id="map"/>
   
    
     
             
             
-            
-    <div id="divControls">
-    
-    <input type="radio" name="geomType" id="radPoint" value="Point" checked>Point</input><br>
-    <input type="radio" name="drawType" id="radDraw" value="Draw" checked>Draw</input><br>
-    <hr>
-    <input type="button" id="btnEraseAll" value="GPS" onclick="geolocation();"></input>
-    <hr>
-    <input type="button" id="btnEraseAll" value="REFRESH" onclick="myFunction();"></input>
-    <hr>
-    <input type="button" id="btnEraseAll" value="DELETE" onclick="eraseAll();"></input>
-   
-    </div>
-    <div id="map"/>
-  
+
    
          
             
